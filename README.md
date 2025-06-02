@@ -77,7 +77,7 @@
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/linealco.git
+   git clone https://github.com/Jmserge29/linealCO.git
    cd linealco
    ```
 
@@ -181,10 +181,8 @@
 **José Serge**
 - 🎓 Estudiante de 6to semestre - Ingeniería de Sistemas
 - 🏫 Universidad Libre de Barranquilla
-- 💼 Desarrollador de Software especializado en aplicaciones web y móviles
-- 📧 Email: [tu-email@ejemplo.com]
-- 🔗 LinkedIn: [tu-perfil-linkedin]
-- 🐙 GitHub: [@tu-usuario]
+- 💼 Desarrollador de Software especializado en aplicaciones web
+- 🐙 GitHub: [@jmserge29]
 
 ## 📄 Licencia
 
@@ -205,22 +203,6 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 ```
-
-## 🙏 Agradecimientos
-
-- 📚 **Universidad Libre de Barranquilla** - Por el apoyo académico
-- 👨‍🏫 **Profesores del Departamento de Ingeniería** - Por la orientación en investigación de operaciones
-- 🎓 **Compañeros de clase** - Por las pruebas y retroalimentación
-- 🌐 **Comunidad Open Source** - Por las herramientas y recursos utilizados
-
-## 📞 Soporte
-
-Si tienes preguntas, sugerencias o encuentras algún problema:
-
-1. 🐛 **Reportar bugs:** [Issues](https://github.com/tu-usuario/linealco/issues)
-2. 💡 **Sugerir mejoras:** [Feature Requests](https://github.com/tu-usuario/linealco/discussions)
-3. 📧 **Contacto directo:** [tu-email@ejemplo.com]
-
 ---
 
 <div align="center">
@@ -229,6 +211,6 @@ Si tienes preguntas, sugerencias o encuentras algún problema:
 
 **Desarrollado con ❤️ para la comunidad educativa**
 
-[🚀 Demo en Vivo](https://linealco.vercel.app) | [📖 Documentación](https://docs.linealco.com) | [🐛 Reportar Bug](https://github.com/tu-usuario/linealco/issues)
+[🚀 Demo en Vivo](https://lineal-co.vercel.app/)
 
 </div>
