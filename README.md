@@ -184,6 +184,10 @@
 - 💼 Desarrollador de Software especializado en aplicaciones web
 - 🐙 GitHub: [@jmserge29]
 
+**Walter Olmos**
+- 🎓 Estudiante de 6to semestre - Ingeniería de Sistemas
+- 🏫 Universidad Libre de Barranquilla
+
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
