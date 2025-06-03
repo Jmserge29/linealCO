@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Calculator, Plus, Minus, RotateCcw, Play, FileText } from 'lucide-react';
+import { Button } from '../../../components/Buttons';
 
 // Tipos e interfaces
 interface ProcessStep {
@@ -181,12 +182,12 @@ const MethodNorthwest: React.FC = () => {
   const { totalSupply, totalDemand, balanced }: BalanceCheck = checkBalance();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 to-indigo-100 p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-2 flex items-center justify-center gap-3">
-            <Calculator className="text-blue-600" />
+            <Calculator className="text-rose-600" />
             Problema de Transporte
           </h1>
           <p className="text-lg text-gray-600">Método de la Esquina Noroeste</p>
@@ -259,7 +260,7 @@ const MethodNorthwest: React.FC = () => {
                 <tr>
                   <th className="border-2 border-gray-300 p-3 bg-gray-50 text-sm font-semibold">Origen / Destino</th>
                   {Array(cols).fill(null).map((_, j: number) => (
-                    <th key={j} className="border-2 border-gray-300 p-3 bg-blue-50 text-sm font-semibold">
+                    <th key={j} className="border-2 border-gray-300 p-3 bg-rose-50 text-sm font-semibold">
                       D{j + 1}
                     </th>
                   ))}
@@ -269,7 +270,7 @@ const MethodNorthwest: React.FC = () => {
               <tbody>
                 {Array(rows).fill(null).map((_, i: number) => (
                   <tr key={i}>
-                    <td className="border-2 border-gray-300 p-3 bg-blue-50 text-sm font-semibold text-center">
+                    <td className="border-2 border-gray-300 p-3 bg-rose-50 text-sm font-semibold text-center">
                       O{i + 1}
                     </td>
                     {Array(cols).fill(null).map((_, j: number) => (
@@ -278,7 +279,7 @@ const MethodNorthwest: React.FC = () => {
                           type="number"
                           value={costs[i]?.[j] || 0}
                           onChange={(e: InputChangeEvent) => updateCost(i, j, e.target.value)}
-                          className="w-full p-2 text-center border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          className="w-full p-2 text-center border rounded focus:outline-none focus:ring-2 focus:ring-rose-500"
                           placeholder="0"
                         />
                       </td>
@@ -339,19 +340,21 @@ const MethodNorthwest: React.FC = () => {
 
         {/* Botón para resolver */}
         <div className="text-center mb-6">
-          <button
+          <Button
             onClick={solveNorthwestCorner}
             disabled={!balanced}
             className={`flex items-center gap-2 mx-auto px-8 py-3 rounded-lg font-semibold transition-colors ${
               balanced 
-                ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                ? 'bg-rose-600 text-white hover:bg-rose-700' 
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
             type="button"
           >
-            <Play size={20} />
-            Resolver con Método Esquina Noroeste
-          </button>
+            <p className='flex items-center gap-2'>
+              <Play size={20} />
+              Resolver con Método Esquina Noroeste
+            </p>
+          </Button>
         </div>
 
         {/* Resultados */}
@@ -375,10 +378,10 @@ const MethodNorthwest: React.FC = () => {
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">Proceso Paso a Paso</h3>
                 <div className="space-y-6">
                   {steps.map((step: ProcessStep, index: number) => (
-                    <div key={index} className="border border-blue-200 rounded-lg p-4 bg-blue-50/50">
+                    <div key={index} className="border border-rose-200 rounded-lg p-4 bg-rose-50/50">
                       {/* Header del paso */}
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="bg-blue-600 text-white text-sm px-3 py-1 rounded-full font-medium">
+                        <span className="bg-rose-600 text-white text-sm px-3 py-1 rounded-full font-medium">
                           Paso {step.step}
                         </span>
                         <span className="text-sm font-medium text-gray-800">
@@ -394,7 +397,7 @@ const MethodNorthwest: React.FC = () => {
                               <th className="border border-gray-400 p-2 bg-gray-100 text-xs font-semibold">O/D</th>
                               {Array(cols).fill(null).map((_, j: number) => (
                                 <th key={j} className={`border border-gray-400 p-2 text-xs font-semibold ${
-                                  j === step.col ? 'bg-blue-200' : 'bg-blue-100'
+                                  j === step.col ? 'bg-rose-200' : 'bg-rose-100'
                                 }`}>
                                   D{j + 1}
                                 </th>
@@ -407,7 +410,7 @@ const MethodNorthwest: React.FC = () => {
                             {Array(rows).fill(null).map((_, i: number) => (
                               <tr key={i}>
                                 <td className={`border border-gray-400 p-2 text-center font-semibold text-xs ${
-                                  i === step.row ? 'bg-blue-200' : 'bg-blue-100'
+                                  i === step.row ? 'bg-rose-200' : 'bg-rose-100'
                                 }`}>
                                   O{i + 1}
                                 </td>
@@ -459,7 +462,7 @@ const MethodNorthwest: React.FC = () => {
 
                                       {/* Indicador de posición actual (esquina noroeste) */}
                                       {i === step.row && j === step.col && !isSelectedCell && (
-                                        <div className="text-xs text-blue-700 absolute top-0 right-0 p-0.5 leading-none">
+                                        <div className="text-xs text-rose-700 absolute top-0 right-0 p-0.5 leading-none">
                                           ↖
                                         </div>
                                       )}
@@ -526,7 +529,7 @@ const MethodNorthwest: React.FC = () => {
                           <span>Celdas ya procesadas</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <div className="w-3 h-3 bg-blue-200 rounded"></div>
+                          <div className="w-3 h-3 bg-rose-200 rounded"></div>
                           <span>Fila/columna actual</span>
                         </div>
                         <div className="flex items-center gap-1">
@@ -558,7 +561,7 @@ const MethodNorthwest: React.FC = () => {
                     <tr>
                       <th className="border-2 border-gray-300 p-3 bg-gray-50 text-sm font-semibold">Asignación</th>
                       {Array(cols).fill(null).map((_, j: number) => (
-                        <th key={j} className="border-2 border-gray-300 p-3 bg-blue-50 text-sm font-semibold">
+                        <th key={j} className="border-2 border-gray-300 p-3 bg-rose-50 text-sm font-semibold">
                           D{j + 1}
                         </th>
                       ))}
@@ -567,7 +570,7 @@ const MethodNorthwest: React.FC = () => {
                   <tbody>
                     {Array(rows).fill(null).map((_, i: number) => (
                       <tr key={i}>
-                        <td className="border-2 border-gray-300 p-3 bg-blue-50 text-sm font-semibold text-center">
+                        <td className="border-2 border-gray-300 p-3 bg-rose-50 text-sm font-semibold text-center">
                           O{i + 1}
                         </td>
                         {Array(cols).fill(null).map((_, j: number) => (
@@ -585,7 +588,7 @@ const MethodNorthwest: React.FC = () => {
                 </table>
               </div>
 
-              <div className="bg-gradient-to-r from-green-100 to-blue-100 p-4 rounded-lg">
+              <div className="bg-gradient-to-r from-green-100 to-rose-100 p-4 rounded-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-800 mb-2">
                     Costo Total: ${solution.totalCost.toFixed(2)}

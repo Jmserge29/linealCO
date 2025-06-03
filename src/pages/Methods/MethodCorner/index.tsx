@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Minus, RotateCcw, Play, FileText, AlertCircle, CheckCircle, Target } from 'lucide-react';
+import { Button } from '../../../components/Buttons';
 
 // Tipos e interfaces
 interface MinimumCostStep {
@@ -456,7 +457,7 @@ const MethodCorner: React.FC = () => {
 
         {/* Botón para resolver */}
         <div className="text-center mb-6">
-          <button
+          <Button
             onClick={solveMinimumCostMethod}
             disabled={!balanced}
             className={`flex items-center gap-2 mx-auto px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform ${
@@ -466,9 +467,11 @@ const MethodCorner: React.FC = () => {
             }`}
             type="button"
           >
-            <Play size={20} />
-            Resolver con Método {objective === 'minimize' ? 'Costo Mínimo' : 'Utilidad Máxima'}
-          </button>
+            <p className='flex items-center gap-2'>
+              <Play size={20} />
+              Resolver con Método {objective === 'minimize' ? 'Costo Mínimo' : 'Utilidad Máxima'}
+            </p>
+          </Button>
         </div>
 
         {/* Resultados */}
@@ -519,7 +522,7 @@ const MethodCorner: React.FC = () => {
                                   D{j + 1}
                                 </th>
                               ))}
-                              <th className="border border-gray-400 p-2 bg-blue-100 text-xs font-semibold">Oferta</th>
+                              <th className="border border-gray-400 p-2 bg-rose-100 text-xs font-semibold">Oferta</th>
                               <th className="border border-gray-400 p-2 bg-yellow-100 text-xs font-semibold">Rest.</th>
                             </tr>
                           </thead>
@@ -575,7 +578,7 @@ const MethodCorner: React.FC = () => {
                                     </td>
                                   );
                                 })}
-                                <td className="border border-gray-400 p-2 text-center text-xs bg-blue-50">
+                                <td className="border border-gray-400 p-2 text-center text-xs bg-rose-50">
                                   {supply[i]}
                                 </td>
                                 <td className={`border border-gray-400 p-2 text-center text-xs font-bold ${
@@ -587,11 +590,11 @@ const MethodCorner: React.FC = () => {
                             ))}
                             {/* Fila de demanda */}
                             <tr>
-                              <td className="border border-gray-400 p-2 bg-blue-100 text-center text-xs font-semibold">
+                              <td className="border border-gray-400 p-2 bg-rose-100 text-center text-xs font-semibold">
                                 Demanda
                               </td>
                               {Array(cols).fill(null).map((_, j: number) => (
-                                <td key={j} className="border border-gray-400 p-2 text-center text-xs bg-blue-50">
+                                <td key={j} className="border border-gray-400 p-2 text-center text-xs bg-rose-50">
                                   {demand[j]}
                                 </td>
                               ))}

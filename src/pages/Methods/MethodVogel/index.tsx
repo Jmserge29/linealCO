@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Calculator, Plus, Minus, RotateCcw, Play, FileText, AlertCircle, CheckCircle } from 'lucide-react';
+import { Button } from '../../../components/Buttons';
 
 // Tipos e interfaces
 interface VogelStep {
@@ -468,7 +469,7 @@ const MethodVogel: React.FC = () => {
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Configuración del Problema</h2>
           
           {/* Selector de objetivo */}
-          <div className="mb-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
+          <div className="mb-6 p-4 bg-gradient-to-r from-purple-50 to-rose-50 rounded-lg border border-purple-200">
             <h3 className="text-lg font-semibold text-gray-800 mb-3">Objetivo de Optimización</h3>
             <div className="flex gap-6">
               <label className="flex items-center gap-2 cursor-pointer">
@@ -643,7 +644,7 @@ const MethodVogel: React.FC = () => {
 
         {/* Botón para resolver */}
         <div className="text-center mb-6">
-          <button
+          <Button
             onClick={solveVogelMethod}
             disabled={!balanced}
             className={`flex items-center gap-2 mx-auto px-8 py-3 rounded-lg font-semibold transition-all duration-200 transform ${
@@ -653,9 +654,11 @@ const MethodVogel: React.FC = () => {
             }`}
             type="button"
           >
-            <Play size={20} />
-            Resolver con Método de Vogel
-          </button>
+            <p className='flex items-center gap-2'>
+              <Play size={20} />
+              Resolver con Método de Vogel
+            </p>
+          </Button>
         </div>
 
         {/* Resultados */}
@@ -720,7 +723,7 @@ const MethodVogel: React.FC = () => {
                                   D{j + 1}
                                 </th>
                               ))}
-                              <th className="border border-gray-400 p-2 bg-blue-100 text-xs font-semibold">Oferta</th>
+                              <th className="border border-gray-400 p-2 bg-rose-100 text-xs font-semibold">Oferta</th>
                               <th className="border border-gray-400 p-2 bg-yellow-100 text-xs font-semibold">Rest.</th>
                               {step.penalties.rows.some(p => p !== null) && (
                                 <th className="border border-gray-400 p-2 bg-red-100 text-xs font-semibold">Pen.F</th>
@@ -756,7 +759,7 @@ const MethodVogel: React.FC = () => {
                                         : isEliminatedCell 
                                         ? 'bg-gray-200 text-gray-500'
                                         : isInSelectedRowCol && !isEliminatedCell
-                                        ? 'bg-blue-100'
+                                        ? 'bg-rose-100'
                                         : 'bg-white'
                                     }`}>
                                       {/* Costo en la esquina superior */}
@@ -780,7 +783,7 @@ const MethodVogel: React.FC = () => {
                                     </td>
                                   );
                                 })}
-                                <td className="border border-gray-400 p-2 text-center text-xs bg-blue-50">
+                                <td className="border border-gray-400 p-2 text-center text-xs bg-rose-50">
                                   {supply[i]}
                                 </td>
                                 <td className={`border border-gray-400 p-2 text-center text-xs font-bold ${
@@ -803,11 +806,11 @@ const MethodVogel: React.FC = () => {
                             ))}
                             {/* Fila de demanda */}
                             <tr>
-                              <td className="border border-gray-400 p-2 bg-blue-100 text-center text-xs font-semibold">
+                              <td className="border border-gray-400 p-2 bg-rose-100 text-center text-xs font-semibold">
                                 Demanda
                               </td>
                               {Array(cols).fill(null).map((_, j: number) => (
-                                <td key={j} className="border border-gray-400 p-2 text-center text-xs bg-blue-50">
+                                <td key={j} className="border border-gray-400 p-2 text-center text-xs bg-rose-50">
                                   {demand[j]}
                                 </td>
                               ))}
@@ -870,7 +873,7 @@ const MethodVogel: React.FC = () => {
                           <span>Celda seleccionada</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <div className="w-3 h-3 bg-blue-100 rounded"></div>
+                          <div className="w-3 h-3 bg-rose-100 rounded"></div>
                           <span>Fila/columna de penalización seleccionada</span>
                         </div>
                         <div className="flex items-center gap-1">
@@ -897,10 +900,10 @@ const MethodVogel: React.FC = () => {
               <h3 className="text-xl font-semibold text-gray-800 mb-4">Solución Final</h3>
               
               {/* Indicador del método usado */}
-              <div className="mb-4 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+              <div className="mb-4 p-3 bg-rose-50 rounded-lg border-l-4 border-rose-500">
                 <div className="flex items-center gap-2">
-                  <AlertCircle size={16} className="text-blue-600" />
-                  <span className="text-sm font-medium text-blue-800">
+                  <AlertCircle size={16} className="text-rose-600" />
+                  <span className="text-sm font-medium text-rose-800">
                     {solution.finalMethod === 'vogel' 
                       ? 'Solución obtenida completamente con el Método de Vogel'
                       : 'Solución obtenida con Método de Vogel + Método de Costo Mínimo'
