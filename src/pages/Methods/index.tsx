@@ -5,7 +5,8 @@ export const MethodsPage = () => {
     <main className="mx-auto max-w-7xl">
         <h1 className="text-5xl relative font-bold text-center my-24">Métodos de Transporte Programación Lineal</h1>
         <div className="size-64 rounded-full z-1 bottom-[5%] left-[10%] bg-rose-400 absolute shadow-2xl shadow-rose-400 blur-3xl"></div>
-        <div className="size-64 rounded-full z-1 top-[32%] right-[6%] bg-orange-400 absolute shadow-2xl opacity-60 shadow-rose-400 blur-3xl"></div>
+        <div className="size-52 rounded-full z-1 top-[2%] left-[5%] bg-amber-100 absolute shadow-2xl shadow-rose-400 blur-3xl"></div>
+        <div className="size-64 rounded-full z-1 top-[32%] right-[6%] bg-orange-400 absolute shadow-2xl opacity-50 shadow-rose-400 blur-3xl"></div>
         <section className="mt-10 mx-auto max-w-[150rem] grid grid-cols-1 md:grid-cols-3 gap-10">
             <MethodCard
                 title="Método Noroeste"
