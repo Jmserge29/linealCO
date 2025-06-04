@@ -348,7 +348,7 @@ const MethodVogel: React.FC = () => {
   };
 
   // Calcular variables duales ui y vj
-  const calculateDualVariables = (allocation: number[][], basicVars: {row: number, col: number}[]): {ui: number[], vj: number[]} => {
+  const calculateDualVariables = (basicVars: {row: number, col: number}[]): {ui: number[], vj: number[]} => {
     const ui: number[] = Array(rows).fill(null);
     const vj: number[] = Array(cols).fill(null);
     
@@ -513,7 +513,7 @@ const MethodVogel: React.FC = () => {
     
     while (!isOptimal && stepNumber <= 10) { // Límite de seguridad
       const basicVars = findBasicVariables(currentAllocation);
-      const {ui, vj} = calculateDualVariables(currentAllocation, basicVars);
+      const {ui, vj} = calculateDualVariables(basicVars);
       const cij = calculateOpportunityCosts(ui, vj);
       const mostNegative = findMostNegative(cij, currentAllocation);
       
